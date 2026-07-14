@@ -1,0 +1,392 @@
+{
+  "metadata": {
+    "name": "mainstream-us-credit-card-catalog-v0",
+    "last_verified": "2026-06-27",
+    "canonical_source_policy": "Official issuer pages are canonical for rewards and availability. CFPB agreements are canonical for public agreement documents. Community sources are discovery inputs only.",
+    "coverage_note": "Starter catalog for planning and MVP data shape. Values should be reverified before production display."
+  },
+  "cards": [
+    {
+      "issuer": "Chase",
+      "name": "Chase Sapphire Preferred",
+      "slug": "chase-sapphire-preferred",
+      "application_status": "open",
+      "reward_currency": "Ultimate Rewards points",
+      "best_for": ["beginner travel", "dining", "online grocery", "gas"],
+      "reward_rules": [
+        {"category": "chase_travel", "rate": 5, "rate_type": "points_per_dollar", "notes": "Travel booked through Chase Travel."},
+        {"category": "dining", "rate": 3, "rate_type": "points_per_dollar", "notes": "Dining worldwide."},
+        {"category": "gas_ev", "rate": 3, "rate_type": "points_per_dollar", "notes": "Gas stations and EV charging."},
+        {"category": "online_grocery", "rate": 3, "rate_type": "points_per_dollar", "notes": "Excludes Target, Walmart, and wholesale clubs."},
+        {"category": "streaming", "rate": 3, "rate_type": "points_per_dollar", "notes": "Top streaming services."},
+        {"category": "travel_other", "rate": 2, "rate_type": "points_per_dollar", "notes": "Other travel."},
+        {"category": "all_other", "rate": 1, "rate_type": "points_per_dollar", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred"]
+    },
+    {
+      "issuer": "Chase",
+      "name": "Chase Sapphire Reserve",
+      "slug": "chase-sapphire-reserve",
+      "application_status": "open",
+      "reward_currency": "Ultimate Rewards points",
+      "best_for": ["premium travel", "dining", "airport lounge"],
+      "reward_rules": [
+        {"category": "chase_travel", "rate": 8, "rate_type": "points_per_dollar", "notes": "Travel booked through Chase Travel."},
+        {"category": "direct_flights_hotels", "rate": 4, "rate_type": "points_per_dollar", "notes": "Direct flights and hotels require follow-up verification in official terms."},
+        {"category": "dining", "rate": 3, "rate_type": "points_per_dollar", "notes": "Dining worldwide."},
+        {"category": "all_other", "rate": 1, "rate_type": "points_per_dollar", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve"]
+    },
+    {
+      "issuer": "Chase",
+      "name": "Chase Freedom Unlimited",
+      "slug": "chase-freedom-unlimited",
+      "application_status": "open",
+      "reward_currency": "cash back as Ultimate Rewards points",
+      "best_for": ["no annual fee", "flat fallback", "dining", "drugstores"],
+      "reward_rules": [
+        {"category": "chase_travel", "rate": 5, "rate_type": "percent_cash_back", "notes": "Travel purchased through Chase Travel."},
+        {"category": "dining", "rate": 3, "rate_type": "percent_cash_back", "notes": "Dining, takeout, and eligible delivery."},
+        {"category": "drugstores", "rate": 3, "rate_type": "percent_cash_back", "notes": "Drugstore purchases."},
+        {"category": "all_other", "rate": 1.5, "rate_type": "percent_cash_back", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.chase.com/personal/credit-cards/freedom/unlimited"]
+    },
+    {
+      "issuer": "Chase",
+      "name": "Chase Freedom Flex",
+      "slug": "chase-freedom-flex",
+      "application_status": "open",
+      "reward_currency": "cash back as Ultimate Rewards points",
+      "best_for": ["rotating categories", "dining", "drugstores"],
+      "reward_rules": [
+        {"category": "quarterly_bonus", "rate": 5, "rate_type": "percent_cash_back", "notes": "Rotating quarterly categories require activation and have a quarterly cap."},
+        {"category": "chase_travel", "rate": 5, "rate_type": "percent_cash_back", "notes": "Travel purchased through Chase Travel."},
+        {"category": "dining", "rate": 3, "rate_type": "percent_cash_back", "notes": "Dining, takeout, and eligible delivery."},
+        {"category": "drugstores", "rate": 3, "rate_type": "percent_cash_back", "notes": "Drugstore purchases."},
+        {"category": "all_other", "rate": 1, "rate_type": "percent_cash_back", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://creditcards.chase.com/cash-back-credit-cards/freedom/flex"]
+    },
+    {
+      "issuer": "Chase",
+      "name": "Prime Visa",
+      "slug": "prime-visa",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["Amazon", "Whole Foods", "Prime members"],
+      "reward_rules": [
+        {"category": "amazon", "rate": 5, "rate_type": "percent_cash_back", "notes": "Requires eligible Prime membership."},
+        {"category": "whole_foods", "rate": 5, "rate_type": "percent_cash_back", "notes": "Requires eligible Prime membership."},
+        {"category": "chase_travel", "rate": 5, "rate_type": "percent_cash_back", "notes": "Requires eligible Prime membership."},
+        {"category": "gas_dining_transit", "rate": 2, "rate_type": "percent_cash_back", "notes": "Gas stations, restaurants, local transit, and commuting."},
+        {"category": "all_other", "rate": 1, "rate_type": "percent_cash_back", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://creditcards.chase.com/cash-back-credit-cards/amazon-prime-rewards"]
+    },
+    {
+      "issuer": "American Express",
+      "name": "American Express Gold Card",
+      "slug": "amex-gold",
+      "application_status": "open",
+      "reward_currency": "Membership Rewards points",
+      "best_for": ["dining", "U.S. supermarkets", "points"],
+      "reward_rules": [
+        {"category": "dining", "rate": 4, "rate_type": "points_per_dollar", "notes": "Restaurants worldwide up to yearly cap."},
+        {"category": "us_supermarkets", "rate": 4, "rate_type": "points_per_dollar", "notes": "U.S. supermarkets up to yearly cap."},
+        {"category": "amex_travel_hotels", "rate": 5, "rate_type": "points_per_dollar", "notes": "Prepaid hotels booked through AmexTravel.com or the Amex Travel app."},
+        {"category": "flights", "rate": 3, "rate_type": "points_per_dollar", "notes": "Flights booked through Amex Travel or directly with airlines."}
+      ],
+      "source_urls": ["https://www.americanexpress.com/us/credit-cards/card/gold-card/"]
+    },
+    {
+      "issuer": "American Express",
+      "name": "The Platinum Card from American Express",
+      "slug": "amex-platinum",
+      "application_status": "open",
+      "reward_currency": "Membership Rewards points",
+      "best_for": ["premium travel", "flights", "prepaid hotels", "airport lounge"],
+      "reward_rules": [
+        {"category": "flights", "rate": 5, "rate_type": "points_per_dollar", "notes": "Flights purchased directly with airlines or through American Express Travel up to yearly cap."},
+        {"category": "amex_travel_hotels", "rate": 5, "rate_type": "points_per_dollar", "notes": "Prepaid hotels booked on AmexTravel.com."},
+        {"category": "all_other", "rate": 1, "rate_type": "points_per_dollar", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.americanexpress.com/us/credit-cards/card/platinum/"]
+    },
+    {
+      "issuer": "American Express",
+      "name": "Blue Cash Preferred Card from American Express",
+      "slug": "amex-blue-cash-preferred",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["groceries", "streaming", "gas", "transit"],
+      "reward_rules": [
+        {"category": "us_supermarkets", "rate": 6, "rate_type": "percent_cash_back", "notes": "U.S. supermarkets up to yearly cap, then lower rate."},
+        {"category": "streaming", "rate": 6, "rate_type": "percent_cash_back", "notes": "Select U.S. streaming subscriptions."},
+        {"category": "transit", "rate": 3, "rate_type": "percent_cash_back", "notes": "Transit."},
+        {"category": "us_gas", "rate": 3, "rate_type": "percent_cash_back", "notes": "U.S. gas stations."}
+      ],
+      "source_urls": ["https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/"]
+    },
+    {
+      "issuer": "Capital One",
+      "name": "Capital One Venture X Rewards",
+      "slug": "capital-one-venture-x",
+      "application_status": "open",
+      "reward_currency": "Capital One miles",
+      "best_for": ["premium travel", "flat 2x", "travel portal"],
+      "reward_rules": [
+        {"category": "capital_one_hotels_rental_cars", "rate": 10, "rate_type": "miles_per_dollar", "notes": "Hotels and rental cars booked through Capital One Travel."},
+        {"category": "capital_one_flights_vacation_rentals", "rate": 5, "rate_type": "miles_per_dollar", "notes": "Flights and vacation rentals booked through Capital One Travel."},
+        {"category": "all_other", "rate": 2, "rate_type": "miles_per_dollar", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.capitalone.com/credit-cards/travel-and-miles/"]
+    },
+    {
+      "issuer": "Capital One",
+      "name": "Capital One Savor Rewards",
+      "slug": "capital-one-savor",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["dining", "grocery stores", "entertainment", "streaming"],
+      "reward_rules": [
+        {"category": "grocery_stores", "rate": 3, "rate_type": "percent_cash_back", "notes": "Grocery stores."},
+        {"category": "dining", "rate": 3, "rate_type": "percent_cash_back", "notes": "Dining."},
+        {"category": "entertainment", "rate": 3, "rate_type": "percent_cash_back", "notes": "Entertainment."},
+        {"category": "streaming", "rate": 3, "rate_type": "percent_cash_back", "notes": "Popular streaming services."},
+        {"category": "all_other", "rate": 1, "rate_type": "percent_cash_back", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.capitalone.com/credit-cards/savor/"]
+    },
+    {
+      "issuer": "Capital One",
+      "name": "Capital One Quicksilver Cash Rewards",
+      "slug": "capital-one-quicksilver",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["simple cash back", "flat fallback", "no annual fee"],
+      "reward_rules": [
+        {"category": "all_other", "rate": 1.5, "rate_type": "percent_cash_back", "notes": "Unlimited cash back on every purchase."}
+      ],
+      "source_urls": ["https://www.capitalone.com/credit-cards/quicksilver/"]
+    },
+    {
+      "issuer": "Citi",
+      "name": "Citi Double Cash",
+      "slug": "citi-double-cash",
+      "application_status": "open",
+      "reward_currency": "cash back or ThankYou points",
+      "best_for": ["flat 2%", "no annual fee", "simple cash back"],
+      "reward_rules": [
+        {"category": "all_other", "rate": 2, "rate_type": "percent_cash_back", "notes": "1% when buying and 1% as paying."}
+      ],
+      "source_urls": ["https://www.citi.com/credit-cards/citi-double-cash-credit-card"]
+    },
+    {
+      "issuer": "Citi",
+      "name": "Citi Strata Premier",
+      "slug": "citi-strata-premier",
+      "application_status": "open",
+      "reward_currency": "ThankYou points",
+      "best_for": ["travel", "supermarkets", "gas", "dining"],
+      "reward_rules": [
+        {"category": "citi_travel_hotels_cars_attractions", "rate": 10, "rate_type": "points_per_dollar", "notes": "Hotels, car rentals, and attractions booked through Citi Travel."},
+        {"category": "air_travel_hotels", "rate": 3, "rate_type": "points_per_dollar", "notes": "Air travel and other hotel purchases."},
+        {"category": "restaurants", "rate": 3, "rate_type": "points_per_dollar", "notes": "Restaurants."},
+        {"category": "supermarkets", "rate": 3, "rate_type": "points_per_dollar", "notes": "Supermarkets."},
+        {"category": "gas_ev", "rate": 3, "rate_type": "points_per_dollar", "notes": "Gas and EV charging stations."},
+        {"category": "all_other", "rate": 1, "rate_type": "points_per_dollar", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.citi.com/credit-cards/citi-strata-premier-credit-card"]
+    },
+    {
+      "issuer": "Citi",
+      "name": "Citi Custom Cash",
+      "slug": "citi-custom-cash",
+      "application_status": "existing_cardmembers_only",
+      "reward_currency": "cash back or ThankYou points",
+      "best_for": ["single top category", "existing holders"],
+      "reward_rules": [
+        {"category": "top_eligible_category", "rate": 5, "rate_type": "percent_cash_back", "notes": "Citi no longer accepts new applications as of 2026-05-28. Existing cardmembers are not impacted."}
+      ],
+      "source_urls": ["https://www.citi.com/credit-cards/citi-custom-cash-credit-card"]
+    },
+    {
+      "issuer": "Bank of America",
+      "name": "Bank of America Customized Cash Rewards",
+      "slug": "boa-customized-cash-rewards",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["choice category", "online shopping", "gas", "wholesale clubs"],
+      "reward_rules": [
+        {"category": "choice_category", "rate": 3, "rate_type": "percent_cash_back", "notes": "Choice category can be changed monthly."},
+        {"category": "grocery_wholesale", "rate": 2, "rate_type": "percent_cash_back", "notes": "Grocery stores and wholesale clubs."},
+        {"category": "all_other", "rate": 1, "rate_type": "percent_cash_back", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/cash-back-category-choices/"]
+    },
+    {
+      "issuer": "Bank of America",
+      "name": "Bank of America Unlimited Cash Rewards",
+      "slug": "boa-unlimited-cash-rewards",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["flat cash back", "Preferred Rewards users"],
+      "reward_rules": [
+        {"category": "all_other", "rate": 1.5, "rate_type": "percent_cash_back", "notes": "Official page lists 2% for the first year from account opening, then 1.5% thereafter."}
+      ],
+      "source_urls": ["https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/"]
+    },
+    {
+      "issuer": "Bank of America",
+      "name": "Bank of America Premium Rewards",
+      "slug": "boa-premium-rewards",
+      "application_status": "open",
+      "reward_currency": "points",
+      "best_for": ["travel", "dining", "Preferred Rewards users"],
+      "reward_rules": [
+        {"category": "travel_dining", "rate": 2, "rate_type": "points_per_dollar", "notes": "Travel and dining."},
+        {"category": "all_other", "rate": 1.5, "rate_type": "points_per_dollar", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/"]
+    },
+    {
+      "issuer": "Bank of America",
+      "name": "Bank of America Travel Rewards",
+      "slug": "boa-travel-rewards",
+      "application_status": "open",
+      "reward_currency": "points",
+      "best_for": ["no annual fee travel", "no foreign transaction fee"],
+      "reward_rules": [
+        {"category": "all_other", "rate": 1.5, "rate_type": "points_per_dollar", "notes": "Unlimited points on all purchases."}
+      ],
+      "source_urls": ["https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/"]
+    },
+    {
+      "issuer": "Wells Fargo",
+      "name": "Wells Fargo Active Cash",
+      "slug": "wells-fargo-active-cash",
+      "application_status": "open",
+      "reward_currency": "cash rewards",
+      "best_for": ["flat 2%", "no annual fee", "simple cash back"],
+      "reward_rules": [
+        {"category": "all_other", "rate": 2, "rate_type": "percent_cash_back", "notes": "Unlimited 2% cash rewards on purchases."}
+      ],
+      "source_urls": ["https://creditcards.wellsfargo.com/"]
+    },
+    {
+      "issuer": "Wells Fargo",
+      "name": "Wells Fargo Autograph",
+      "slug": "wells-fargo-autograph",
+      "application_status": "open",
+      "reward_currency": "Wells Fargo Rewards points",
+      "best_for": ["no annual fee travel", "restaurants", "gas", "transit", "streaming", "phone plans"],
+      "reward_rules": [
+        {"category": "restaurants", "rate": 3, "rate_type": "points_per_dollar", "notes": "Restaurants."},
+        {"category": "travel", "rate": 3, "rate_type": "points_per_dollar", "notes": "Travel."},
+        {"category": "gas", "rate": 3, "rate_type": "points_per_dollar", "notes": "Gas stations."},
+        {"category": "transit", "rate": 3, "rate_type": "points_per_dollar", "notes": "Transit."},
+        {"category": "streaming", "rate": 3, "rate_type": "points_per_dollar", "notes": "Popular streaming services."},
+        {"category": "phone_plans", "rate": 3, "rate_type": "points_per_dollar", "notes": "Phone plans."},
+        {"category": "all_other", "rate": 1, "rate_type": "points_per_dollar", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://creditcards.wellsfargo.com/autograph-visa-credit-card/"]
+    },
+    {
+      "issuer": "Wells Fargo",
+      "name": "Wells Fargo Attune",
+      "slug": "wells-fargo-attune",
+      "application_status": "open",
+      "reward_currency": "cash rewards",
+      "best_for": ["fitness", "self care", "entertainment", "recreation"],
+      "reward_rules": [
+        {"category": "sports_recreation_entertainment", "rate": 4, "rate_type": "percent_cash_back", "notes": "Select sports, recreation, and entertainment."},
+        {"category": "self_care", "rate": 4, "rate_type": "percent_cash_back", "notes": "Select self-care categories require detailed merchant mapping."}
+      ],
+      "source_urls": ["https://creditcards.wellsfargo.com/attune-cash-rewards-categories/"]
+    },
+    {
+      "issuer": "U.S. Bank",
+      "name": "U.S. Bank Smartly Visa Signature",
+      "slug": "us-bank-smartly",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["flat cash back", "U.S. Bank relationship"],
+      "reward_rules": [
+        {"category": "all_other", "rate": 2, "rate_type": "percent_cash_back", "notes": "Unlimited 2% cash back baseline."},
+        {"category": "relationship_bonus", "rate": 4, "rate_type": "percent_cash_back", "notes": "Potential higher rate on first $10,000 eligible net purchases each billing cycle with qualifying U.S. Bank balances."}
+      ],
+      "source_urls": ["https://www.usbank.com/credit-cards/bank-smartly-visa-signature-credit-card.html"]
+    },
+    {
+      "issuer": "U.S. Bank",
+      "name": "U.S. Bank Cash Plus Visa Signature",
+      "slug": "us-bank-cash-plus",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["chosen categories", "utilities", "streaming", "phone providers"],
+      "reward_rules": [
+        {"category": "two_chosen_categories", "rate": 5, "rate_type": "percent_cash_back", "notes": "Two categories chosen each quarter with a quarterly cap."},
+        {"category": "one_everyday_category", "rate": 2, "rate_type": "percent_cash_back", "notes": "One everyday category chosen each quarter."},
+        {"category": "all_other", "rate": 1, "rate_type": "percent_cash_back", "notes": "All other eligible purchases."}
+      ],
+      "source_urls": ["https://www.usbank.com/credit-cards.html", "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html"]
+    },
+    {
+      "issuer": "U.S. Bank",
+      "name": "U.S. Bank Altitude Go Visa Signature",
+      "slug": "us-bank-altitude-go",
+      "application_status": "open",
+      "reward_currency": "points",
+      "best_for": ["dining", "no annual fee", "grocery", "gas", "streaming"],
+      "reward_rules": [
+        {"category": "dining", "rate": 4, "rate_type": "points_per_dollar", "notes": "Dining, takeout, and restaurant delivery on first $2,000 each quarter."},
+        {"category": "streaming", "rate": 2, "rate_type": "points_per_dollar", "notes": "Streaming services."},
+        {"category": "grocery", "rate": 2, "rate_type": "points_per_dollar", "notes": "Grocery stores with exclusions."},
+        {"category": "gas_ev", "rate": 2, "rate_type": "points_per_dollar", "notes": "Gas stations and EV charging with exclusions."},
+        {"category": "all_other", "rate": 1, "rate_type": "points_per_dollar", "notes": "All other eligible purchases."}
+      ],
+      "source_urls": ["https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html"]
+    },
+    {
+      "issuer": "Discover",
+      "name": "Discover it Cash Back",
+      "slug": "discover-it-cash-back",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["rotating categories", "no annual fee", "first-year match"],
+      "reward_rules": [
+        {"category": "quarterly_bonus", "rate": 5, "rate_type": "percent_cash_back", "notes": "Rotating categories require activation and have a quarterly cap."},
+        {"category": "all_other", "rate": 1, "rate_type": "percent_cash_back", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.discover.com/credit-cards/cash-back/cashback-calendar.html"]
+    },
+    {
+      "issuer": "Discover",
+      "name": "Discover it Miles",
+      "slug": "discover-it-miles",
+      "application_status": "open",
+      "reward_currency": "miles",
+      "best_for": ["simple travel", "flat rewards", "no annual fee"],
+      "reward_rules": [
+        {"category": "all_other", "rate": 1.5, "rate_type": "miles_per_dollar", "notes": "Every purchase."}
+      ],
+      "source_urls": ["https://www.discover.com/credit-cards/travel/"]
+    },
+    {
+      "issuer": "Discover",
+      "name": "Discover it Chrome",
+      "slug": "discover-it-chrome",
+      "application_status": "open",
+      "reward_currency": "cash back",
+      "best_for": ["gas", "restaurants", "no annual fee"],
+      "reward_rules": [
+        {"category": "gas_restaurants", "rate": 2, "rate_type": "percent_cash_back", "notes": "Gas stations and restaurants up to combined quarterly cap."},
+        {"category": "all_other", "rate": 1, "rate_type": "percent_cash_back", "notes": "All other purchases."}
+      ],
+      "source_urls": ["https://www.discover.com/credit-cards/cash-back/chrome/"]
+    }
+  ]
+}

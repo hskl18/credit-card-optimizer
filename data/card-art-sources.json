@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "last_researched": "2026-07-13",
+    "policy": "Use official issuer pages as the first source for card artwork. Downloaded files are prototype assets until reviewed for public redistribution.",
+    "minimum_publish_width": 600,
+    "maximum_rendered_width_css_px": 300,
+    "target_device_pixel_ratio": 2
+  },
+  "assets": [
+    {
+      "card_slug": "chase-sapphire-preferred",
+      "source_page": "https://www.chase.com/sapphire-cards/personal/preferred",
+      "image_url": "https://www.chase.com/content/dam/unified-assets/sapphire-cards/personal/preferred/aaa-bbb-ccc-assets/card_sapphirePref_VS.png",
+      "local_path": "assets/card-art/raw/chase-sapphire-preferred.png",
+      "pixel_width": 600,
+      "pixel_height": 400,
+      "status": "approved"
+    },
+    {
+      "card_slug": "amex-gold",
+      "source_page": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "image_url": "https://www.aexp-static.com/online/myca/shared/summary/cardasset/images/NUS000000174_480x304_STRAIGHT_96.png",
+      "local_path": "assets/card-art/raw/amex-gold.png",
+      "pixel_width": 480,
+      "pixel_height": 304,
+      "status": "needs_higher_resolution"
+    },
+    {
+      "card_slug": "capital-one-venture-x",
+      "source_page": "https://www.capitalone.com/credit-cards/venture-x/",
+      "image_url": "https://ecm.capitalone.com/WCM/card/products/venturex-cg-static-card-1000x630-2.png",
+      "local_path": "assets/card-art/raw/capital-one-venture-x.png",
+      "pixel_width": 1000,
+      "pixel_height": 630,
+      "status": "approved"
+    },
+    {
+      "card_slug": "capital-one-savor",
+      "source_page": "https://www.capitalone.com/credit-cards/savor/",
+      "image_url": "https://ecm.capitalone.com/WCM/card/products/new-savor-card-art.png",
+      "local_path": "assets/card-art/raw/capital-one-savor.png",
+      "pixel_width": 450,
+      "pixel_height": 282,
+      "status": "needs_higher_resolution"
+    },
+    {
+      "card_slug": "citi-double-cash",
+      "source_page": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "image_url": "https://aemapi.citi.com/content/dam/cfs/uspb/usmkt/cards/en/static/images/citi-double-cash-credit-card/citi-double-cash-credit-card_306x192.webp",
+      "local_path": "assets/card-art/raw/citi-double-cash.webp",
+      "pixel_width": 306,
+      "pixel_height": 192,
+      "status": "needs_higher_resolution"
+    }
+  ]
+}
