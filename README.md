@@ -1,9 +1,9 @@
-# Card Compass
+# Credit Card Optimizer
 
 Which credit card to use for every purchase, in dollars.
 
 Reward rates are published in units nobody can compare: `4x` on one card, `6%` on another, and a point is worth anywhere from 0.6 to 2.05 cents depending on how you redeem it.
-Card Compass converts every rate into one number — dollars back per $100 spent — so the cards can actually be ranked against each other.
+This converts every rate into one number — dollars back per $100 spent — so the cards can actually be ranked against each other.
 
 Everything runs in the browser.
 There is no account, no bank linking, and no card numbers; your wallet lives in `localStorage` and never leaves the device.
@@ -67,8 +67,9 @@ Card artwork under `public/card-art/` and `assets/card-art/raw/` belongs to the 
 ## Artwork and trademarks
 
 Card images are downloaded from official issuer pages and self-hosted, one per card, at the size the source supports.
-Four cards ship no image at all: the official download has an issuer promotional badge burned into the pixels, so it is withheld rather than republished.
-Their entries stay in `data/card-art-sources.json` with `status: "withheld_promotional_badge"`, and `pnpm test` names them on every run.
+Only badge-free renderings are used: several issuers also publish the same card with a promotional banner burned into the pixels, and those are avoided.
+One image (Bank of America Unlimited Cash Rewards) comes from an Internet Archive snapshot, because every current rendering carries a badge; `data/card-art-sources.json` records that.
+An asset that can only be found with a badge is marked `status: "withheld_promotional_badge"` and shipped as an empty slot, which `pnpm test` reports on every run.
 
-Card Compass is an independent project.
+This is an independent project.
 It is not affiliated with, authorised by, or endorsed by any card issuer, and it is not financial advice.

@@ -32,7 +32,7 @@ const gaps = [
   ["Not counted", "Statement credits, lounge access, and sign-up bonuses. A premium card can look worse here than it is for you."],
   ["Caps", "Flagged on every rate that has one, but not subtracted, so capped bonuses read high."],
   ["Rotating quarters", "Counted as a single quarter, never a full year."],
-  ["Card art", "Four cards show no image: the official download has an issuer promotional badge burned into it, so it is not republished here."],
+  ["Card art", "Downloaded from official issuer pages, badge-free renderings only. One is an Internet Archive snapshot because every current version carries a promotional badge."],
   ["Reverify", "The catalog is a starter set. Citi Custom Cash and Wells Fargo Attune base rates in particular should be checked against the issuer before you act on them."]
 ];
 
@@ -41,7 +41,7 @@ export default function InfoPage() {
 
   return (
     <>
-      <h1 className="sr-only">How Card Compass values points and ranks cards</h1>
+      <h1 className="sr-only">How this site values points and ranks cards</h1>
       <div className="head">
         <span className="label">How the number works</span>
       </div>

@@ -37,16 +37,20 @@
     {
       "card_slug": "chase-freedom-flex",
       "source_page": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
-      "image_url": "https://creditcards.chase.com/content/dam/jpmc-marketplace/card-art/freedom_flex_card_alt.png",
-      "status": "withheld_promotional_badge",
-      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
+      "image_url": "https://creditcards.chase.com/content/dam/jpmc-marketplace/card-art/freedom-flex-card.png",
+      "local_path": "assets/card-art/raw/chase-freedom-flex.png",
+      "pixel_width": 289,
+      "pixel_height": 181,
+      "status": "approved"
     },
     {
       "card_slug": "prime-visa",
       "source_page": "https://creditcards.chase.com/cash-back-credit-cards/amazon-prime-rewards",
-      "image_url": "https://creditcards.chase.com/content/dam/jpmc-marketplace/card-art/prime-visa.png",
-      "status": "withheld_promotional_badge",
-      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
+      "image_url": "https://creditcards.chase.com/content/dam/jpmc-marketplace/card-art/prime_visa_no_banner.png",
+      "local_path": "assets/card-art/raw/prime-visa.png",
+      "pixel_width": 289,
+      "pixel_height": 181,
+      "status": "approved"
     },
     {
       "card_slug": "amex-gold",
@@ -132,16 +136,21 @@
     {
       "card_slug": "boa-customized-cash-rewards",
       "source_page": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
-      "image_url": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8ckn_cshsigcm_v_250x158.png",
-      "status": "withheld_promotional_badge",
-      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
+      "image_url": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8ckn_cshcm_v_300x188.png",
+      "local_path": "assets/card-art/raw/boa-customized-cash-rewards.png",
+      "pixel_width": 300,
+      "pixel_height": 189,
+      "status": "approved"
     },
     {
       "card_slug": "boa-unlimited-cash-rewards",
       "source_page": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/",
       "image_url": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png",
-      "status": "withheld_promotional_badge",
-      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
+      "local_path": "assets/card-art/raw/boa-unlimited-cash-rewards.png",
+      "pixel_width": 250,
+      "pixel_height": 157,
+      "status": "approved",
+      "note": "Taken from the Internet Archive snapshot of 2021-09-05, because every current Bank of America rendering of this card has a promotional badge burned into it."
     },
     {
       "card_slug": "boa-premium-rewards",

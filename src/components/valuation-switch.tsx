@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import type { Valuation } from "@/lib/recommendation/value";
 
-const storageKey = "card-compass-valuation";
+const storageKey = "cco-valuation";
 
 /** How the reader cashes points in. Shared by every screen that shows value. */
 export function useValuation() {

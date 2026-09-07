@@ -9,7 +9,7 @@ import type { CatalogCard } from "@/lib/cards/types";
 import { bestByCategory } from "@/lib/recommendation/recommend";
 import { annualValue, formatNet } from "@/lib/recommendation/spend";
 
-const storageKey = "card-compass-wallet";
+const storageKey = "cco-wallet";
 
 export function WalletWorkbench({ cards }: { cards: CatalogCard[] }) {
   const [wallet, setWallet] = useState<string[]>([]);

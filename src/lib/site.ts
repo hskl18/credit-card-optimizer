@@ -1,4 +1,4 @@
-export const siteName = "Card Compass";
+export const siteName = "Credit Card Optimizer";
 
 export const siteDescription =
   "Which credit card to use for every purchase, in dollars. Points and cash back " +

@@ -8,7 +8,7 @@ import {
   type SpendProfile
 } from "@/lib/recommendation/spend";
 
-const storageKey = "card-compass-spend";
+const storageKey = "cco-spend";
 
 export function useSpend() {
   const [spend, setSpend] = useState<SpendProfile>(defaultSpend);

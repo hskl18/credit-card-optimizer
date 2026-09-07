@@ -5,7 +5,7 @@ import { getCatalogMetadata } from "@/lib/cards/catalog";
 import { siteDescription, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const title = "Card Compass — the best credit card for every purchase";
+const title = "Credit Card Optimizer — the right card for every purchase";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
