@@ -8,7 +8,7 @@ Build a completely free public platform that helps U.S. users understand mainstr
 
 ## Current Facts
 
-- The repo at `/Users/ice/project/Credit Card` was empty when this report was created.
+- The repo was empty when this report was created.
 - The repo was not initialized as a git repository.
 - The product should start with the real wallet workflow instead of a marketing shell.
 - The product should keep local demo data and production data boundaries explicit.

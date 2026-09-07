@@ -1,5 +1,3 @@
-import type { LucideIcon } from "lucide-react";
-
 export type RewardRule = {
   category: string;
   rate: number;
@@ -13,6 +11,7 @@ export type CatalogCard = {
   name: string;
   slug: string;
   applicationStatus: string;
+  annualFee: number;
   rewardCurrency: string;
   bestFor: string[];
   rewardRules: RewardRule[];
@@ -20,12 +19,13 @@ export type CatalogCard = {
   art?: {
     publicPath: string;
     sourcePage: string;
+    pixelWidth: number;
+    pixelHeight: number;
   };
 };
 
 export type SpendingCategory = {
   id: string;
   label: string;
-  icon: LucideIcon;
   matchingRules: string[];
 };

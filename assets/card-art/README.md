@@ -8,9 +8,10 @@ Usage rules:
 
 - Keep source metadata in [data/card-art-sources.json](../../data/card-art-sources.json).
 - Prefer official issuer product pages over search-engine images.
-- Keep the unmodified official download in `raw`, even when it is below the publication threshold.
+- Keep the unmodified official download in `raw`.
 - Copy only assets marked `approved` into `public/card-art`.
-- Require at least 600 source pixels across when the UI renders artwork at no more than 300 CSS pixels for a 2x display.
+- At a 2x target pixel ratio, never render an asset above half of its source width or height.
+- Preserve each issuer's original landscape or portrait orientation.
 - Run `npm run card-art:validate` after changing the manifest or any card image.
 - Do not treat downloaded card artwork as owned project artwork.
 - Do not alter card art in a way that implies issuer endorsement.

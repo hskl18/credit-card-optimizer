@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "last_researched": "2026-09-05",
+    "cash_policy": "Guaranteed cash-out or statement-credit value published by the issuer.",
+    "travel_policy": "The Points Guy monthly valuations, September 2026.",
+    "travel_source": "https://thepointsguy.com/guide/monthly-valuations/",
+    "paths_source": "https://10xtravel.com/best-credit-card-travel-portals-compared/"
+  },
+  "default_program": {
+    "id": "fixed_value",
+    "label": "Fixed-value points",
+    "cash_cents": 1,
+    "travel_cents": 1,
+    "paths": [
+      {
+        "label": "Statement credit or deposit",
+        "cents": 1
+      }
+    ],
+    "note": "A fixed-value program. However you redeem, a point is a cent, so there is nothing to optimise."
+  },
+  "programs": [
+    {
+      "id": "chase_ultimate_rewards",
+      "label": "Ultimate Rewards",
+      "currency_match": "ultimate rewards",
+      "cash_cents": 1,
+      "travel_cents": 2.05,
+      "paths": [
+        {
+          "label": "Transfer to 14 airline and hotel partners, Hyatt and United among them",
+          "cents": 2.05
+        },
+        {
+          "label": "Book through Chase Travel",
+          "cents": 1.25
+        },
+        {
+          "label": "Statement credit or deposit",
+          "cents": 1
+        }
+      ],
+      "note": "Chase retires the 1.25 and 1.5 cent portal rates in late October 2027 and replaces them with Points Boost, which is not always as generous.",
+      "pairing": "a Sapphire or Ink card"
+    },
+    {
+      "id": "amex_membership_rewards",
+      "label": "Membership Rewards",
+      "currency_match": "membership rewards",
+      "cash_cents": 0.6,
+      "travel_cents": 2,
+      "paths": [
+        {
+          "label": "Transfer to 15 airlines and 4 hotel programs",
+          "cents": 2
+        },
+        {
+          "label": "Amex Travel flights and Fine Hotels + Resorts",
+          "cents": 1
+        },
+        {
+          "label": "Statement credit",
+          "cents": 0.6
+        }
+      ],
+      "note": "Cashing Amex points out is the worst deal of the big programs. A transfer is not a bonus here, it is the whole point of the card."
+    },
+    {
+      "id": "capital_one_miles",
+      "label": "Capital One miles",
+      "currency_match": "capital one",
+      "cash_cents": 1,
+      "travel_cents": 1.85,
+      "paths": [
+        {
+          "label": "Transfer to airline and hotel partners",
+          "cents": 1.85
+        },
+        {
+          "label": "Erase a travel purchase, or book Capital One Travel",
+          "cents": 1
+        }
+      ],
+      "note": "The purchase eraser makes 1 cent effortless, so transfers only pay off when you actually find award space."
+    },
+    {
+      "id": "citi_thankyou",
+      "label": "ThankYou points",
+      "currency_match": "thankyou",
+      "cash_cents": 1,
+      "travel_cents": 1.9,
+      "paths": [
+        {
+          "label": "Transfer to 20+ airline and hotel partners",
+          "cents": 1.9
+        },
+        {
+          "label": "Book through Citi Travel",
+          "cents": 1
+        },
+        {
+          "label": "Statement credit",
+          "cents": 1
+        }
+      ],
+      "pairing": "a Strata Premier"
+    },
+    {
+      "id": "wells_fargo_rewards",
+      "label": "Wells Fargo Rewards",
+      "currency_match": "wells fargo",
+      "cash_cents": 1,
+      "travel_cents": 1.75,
+      "paths": [
+        {
+          "label": "Transfer to 5+ airline and hotel partners",
+          "cents": 1.75
+        },
+        {
+          "label": "Statement credit or deposit",
+          "cents": 1
+        }
+      ]
+    }
+  ]
+}

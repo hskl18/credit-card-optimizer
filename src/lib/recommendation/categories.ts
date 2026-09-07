@@ -1,106 +1,115 @@
-import {
-  Car,
-  Dumbbell,
-  Fuel,
-  Home,
-  MoreHorizontal,
-  Pill,
-  Plane,
-  Popcorn,
-  ShoppingBag,
-  ShoppingCart,
-  Train,
-  Utensils,
-  Wifi
-} from "lucide-react";
 import type { SpendingCategory } from "@/lib/cards/types";
+
+/**
+ * Rules the cardholder has to opt into: a category they pick, or a quarter that
+ * rotates. They can apply to any category, but only if the holder selected or
+ * activated it, so they always carry a caveat.
+ */
+export const pickRuleCategories = new Set([
+  "choice_category",
+  "one_everyday_category",
+  "top_eligible_category",
+  "two_chosen_categories"
+]);
+
+/** Rotating bonuses the issuer changes every quarter, so they run a quarter. */
+export const rotatingRuleCategories = new Set(["quarterly_bonus"]);
+
+export const conditionalRuleCategories = new Set([
+  ...pickRuleCategories,
+  ...rotatingRuleCategories
+]);
 
 export const categories: SpendingCategory[] = [
   {
     id: "dining",
     label: "Dining",
-    icon: Utensils,
-    matchingRules: ["dining", "restaurants", "gas_dining_transit"]
+    matchingRules: [
+      "dining",
+      "restaurants",
+      "gas_restaurants",
+      "gas_dining_transit",
+      "travel_dining"
+    ]
   },
   {
     id: "groceries",
     label: "Groceries",
-    icon: ShoppingCart,
-    matchingRules: ["grocery_stores", "us_supermarkets", "supermarkets", "grocery_wholesale", "grocery"]
+    matchingRules: [
+      "grocery",
+      "grocery_stores",
+      "grocery_wholesale",
+      "online_grocery",
+      "supermarkets",
+      "us_supermarkets",
+      "whole_foods"
+    ]
   },
   {
     id: "amazon",
     label: "Amazon",
-    icon: ShoppingBag,
-    matchingRules: ["amazon", "quarterly_bonus", "choice_category", "top_eligible_category"]
+    matchingRules: ["amazon"]
+  },
+  {
+    id: "travel",
+    label: "Travel",
+    matchingRules: [
+      "air_travel_hotels",
+      "amex_travel_hotels",
+      "capital_one_flights_vacation_rentals",
+      "capital_one_hotels_rental_cars",
+      "chase_travel",
+      "citi_travel_hotels_cars_attractions",
+      "direct_flights_hotels",
+      "flights",
+      "travel",
+      "travel_dining",
+      "travel_other"
+    ]
   },
   {
     id: "gas",
     label: "Gas",
-    icon: Fuel,
     matchingRules: ["gas", "us_gas", "gas_ev", "gas_restaurants", "gas_dining_transit"]
   },
   {
     id: "ev",
     label: "EV charging",
-    icon: Car,
     matchingRules: ["gas_ev"]
-  },
-  {
-    id: "travel",
-    label: "Travel",
-    icon: Plane,
-    matchingRules: [
-      "chase_travel",
-      "travel_other",
-      "capital_one_hotels_rental_cars",
-      "capital_one_flights_vacation_rentals",
-      "citi_travel_hotels_cars_attractions",
-      "travel",
-      "air_travel_hotels",
-      "travel_dining"
-    ]
-  },
-  {
-    id: "streaming",
-    label: "Streaming",
-    icon: Wifi,
-    matchingRules: ["streaming"]
   },
   {
     id: "transit",
     label: "Transit",
-    icon: Train,
     matchingRules: ["transit", "gas_dining_transit"]
+  },
+  {
+    id: "streaming",
+    label: "Streaming",
+    matchingRules: ["streaming"]
+  },
+  {
+    id: "phone",
+    label: "Phone bill",
+    matchingRules: ["phone_plans"]
   },
   {
     id: "drugstores",
     label: "Drugstores",
-    icon: Pill,
     matchingRules: ["drugstores"]
   },
   {
     id: "entertainment",
     label: "Entertainment",
-    icon: Popcorn,
     matchingRules: ["entertainment", "sports_recreation_entertainment"]
   },
   {
     id: "wellness",
     label: "Wellness",
-    icon: Dumbbell,
     matchingRules: ["self_care", "sports_recreation_entertainment"]
   },
   {
-    id: "utilities",
-    label: "Utilities",
-    icon: Home,
-    matchingRules: ["two_chosen_categories"]
-  },
-  {
     id: "general",
-    label: "Other",
-    icon: MoreHorizontal,
+    label: "Everything else",
     matchingRules: ["all_other"]
   }
 ];

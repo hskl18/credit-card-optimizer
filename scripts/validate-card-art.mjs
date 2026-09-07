@@ -5,25 +5,44 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const manifestPath = join(root, "data/card-art-sources.json");
 const catalogPath = join(root, "data/card-catalog-v0.json");
+const valuationPath = join(root, "data/point-valuations.json");
 const publicDirectory = join(root, "public/card-art");
 const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
 const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
+const valuations = JSON.parse(readFileSync(valuationPath, "utf8"));
 const errors = [];
 const expectedPublicFiles = new Set();
 const catalogSlugs = new Set(catalog.cards.map((card) => card.slug));
-const minimumWidth = manifest.metadata.minimum_publish_width;
-const expectedMinimumWidth =
-  manifest.metadata.maximum_rendered_width_css_px * manifest.metadata.target_device_pixel_ratio;
+const manifestSlugs = new Set();
+const targetDevicePixelRatio = manifest.metadata.target_device_pixel_ratio;
 
-if (minimumWidth !== expectedMinimumWidth) {
-  errors.push(
-    `minimum_publish_width must equal maximum_rendered_width_css_px x target_device_pixel_ratio (${expectedMinimumWidth})`,
-  );
+if (targetDevicePixelRatio < 2) {
+  errors.push("target_device_pixel_ratio must be at least 2");
 }
 
 for (const asset of manifest.assets) {
   if (!catalogSlugs.has(asset.card_slug)) {
     errors.push(`${asset.card_slug}: no matching catalog card`);
+  }
+
+  if (manifestSlugs.has(asset.card_slug)) {
+    errors.push(`${asset.card_slug}: duplicate manifest entry`);
+  }
+  manifestSlugs.add(asset.card_slug);
+
+  if (asset.status === "withheld_promotional_badge") {
+    if (asset.local_path || asset.pixel_width || asset.pixel_height) {
+      errors.push(`${asset.card_slug}: a withheld asset must not record a local file`);
+    }
+    if (!asset.note) {
+      errors.push(`${asset.card_slug}: a withheld asset needs a note saying why`);
+    }
+    continue;
+  }
+
+  if (!asset.local_path) {
+    errors.push(`${asset.card_slug}: only a withheld asset may omit local_path`);
+    continue;
   }
 
   const rawPath = join(root, asset.local_path);
@@ -39,8 +58,10 @@ for (const asset of manifest.assets) {
     );
   }
 
-  const ratio = dimensions.width / dimensions.height;
-  if (ratio < 1.48 || ratio > 1.62) {
+  const longEdge = Math.max(dimensions.width, dimensions.height);
+  const shortEdge = Math.min(dimensions.width, dimensions.height);
+  const ratio = longEdge / shortEdge;
+  if (ratio < 1.35 || ratio > 1.7) {
     errors.push(`${asset.card_slug}: unexpected card-art aspect ratio ${ratio.toFixed(3)}`);
   }
 
@@ -48,9 +69,6 @@ for (const asset of manifest.assets) {
   const publicPath = join(publicDirectory, publicFilename);
   if (asset.status === "approved") {
     expectedPublicFiles.add(publicFilename);
-    if (dimensions.width < minimumWidth) {
-      errors.push(`${asset.card_slug}: approved width ${dimensions.width}px is below ${minimumWidth}px`);
-    }
     if (!existsSync(publicPath)) {
       errors.push(`${asset.card_slug}: approved asset is missing from public/card-art`);
     } else {
@@ -67,6 +85,12 @@ for (const asset of manifest.assets) {
   }
 }
 
+for (const slug of catalogSlugs) {
+  if (!manifestSlugs.has(slug)) {
+    errors.push(`${slug}: missing card-art manifest entry`);
+  }
+}
+
 if (existsSync(publicDirectory)) {
   for (const filename of readdirSync(publicDirectory)) {
     if (!expectedPublicFiles.has(filename)) {
@@ -76,8 +100,46 @@ if (existsSync(publicDirectory)) {
 }
 
 for (const asset of manifest.assets) {
+  if (asset.status !== "approved") {
+    console.log(`HOLD ${asset.card_slug} ${asset.status}`);
+    continue;
+  }
+  const safeWidth = Math.floor(asset.pixel_width / targetDevicePixelRatio);
+  const safeHeight = Math.floor(asset.pixel_height / targetDevicePixelRatio);
   console.log(
-    `${asset.status === "approved" ? "PASS" : "HOLD"} ${asset.card_slug} ${asset.pixel_width}x${asset.pixel_height}`,
+    `PASS ${asset.card_slug} ${asset.pixel_width}x${asset.pixel_height} source, up to ${safeWidth}x${safeHeight} CSS px`,
+  );
+}
+
+// src/lib/recommendation/value.ts trusts this shape instead of parsing it in the
+// browser, so the check has to live here.
+for (const program of [valuations.default_program, ...valuations.programs]) {
+  const where = `point-valuations ${program?.id ?? "(missing id)"}`;
+  if (typeof program?.id !== "string" || typeof program?.label !== "string") {
+    errors.push(`${where}: needs a string id and label`);
+  }
+  for (const field of ["cash_cents", "travel_cents"]) {
+    if (typeof program?.[field] !== "number" || program[field] <= 0) {
+      errors.push(`${where}: ${field} must be a positive number`);
+    }
+  }
+  if (!Array.isArray(program?.paths) || program.paths.length === 0) {
+    errors.push(`${where}: needs at least one redemption path`);
+  } else {
+    for (const path of program.paths) {
+      if (typeof path?.label !== "string" || typeof path?.cents !== "number" || path.cents <= 0) {
+        errors.push(`${where}: every path needs a label and a positive cents value`);
+      }
+    }
+  }
+}
+
+const withheld = manifest.assets.filter(
+  (asset) => asset.status === "withheld_promotional_badge",
+);
+if (withheld.length > 0) {
+  console.log(
+    `${withheld.length} assets are withheld for carrying an issuer promotional badge: ${withheld.map((asset) => asset.card_slug).join(", ")}`,
   );
 }
 

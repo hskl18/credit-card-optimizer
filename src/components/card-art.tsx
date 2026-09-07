@@ -4,30 +4,35 @@ import type { CatalogCard } from "@/lib/cards/types";
 type CardArtProps = {
   card: CatalogCard;
   priority?: boolean;
+  size?: "sm" | "lg";
 };
 
-export function CardArt({ card, priority = false }: CardArtProps) {
-  if (card.art?.publicPath) {
-    return (
-      <div className="card-art-frame">
-        <Image
-          alt={`${card.name} card artwork`}
-          className="card-art-image"
-          height={190}
-          loading={priority ? "eager" : "lazy"}
-          src={card.art.publicPath}
-          width={300}
-        />
-      </div>
-    );
+/** Mirrors the frames in globals.css so next/image requests a matching size. */
+const frames = {
+  sm: { width: 80, height: 50 },
+  lg: { width: 400, height: 230 }
+};
+
+export function CardArt({ card, priority = false, size = "sm" }: CardArtProps) {
+  const art = card.art;
+  if (!art) {
+    return <div className={`art art-${size}`} aria-hidden="true" />;
   }
 
+  const frame = frames[size];
+  // Fit the frame, and never render past the source pixels.
+  const scale = Math.min(frame.width / art.pixelWidth, frame.height / art.pixelHeight, 1);
+
   return (
-    <div className="card-art-frame">
-      <div className={`card-art-fallback issuer-${card.issuerSlug}`}>
-        <span>{card.issuer}</span>
-        <strong>{card.name.replace(card.issuer, "").trim() || card.name}</strong>
-      </div>
+    <div className={`art art-${size}`}>
+      <Image
+        // Decorative: every call site renders the card name right beside it.
+        alt=""
+        height={Math.round(art.pixelHeight * scale)}
+        priority={priority}
+        src={art.publicPath}
+        width={Math.round(art.pixelWidth * scale)}
+      />
     </div>
   );
 }

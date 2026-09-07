@@ -7,22 +7,32 @@ const catalog = catalogSchema.parse(catalogJson);
 const artManifest = cardArtManifestSchema.parse(artManifestJson);
 
 const artBySlug = new Map(
-  artManifest.assets.filter((asset) => asset.status === "approved").map((asset) => {
-    const filename = asset.local_path.split("/").at(-1);
-    return [
-      asset.card_slug,
-      {
-        publicPath: filename ? `/card-art/${filename}` : "",
-        sourcePage: asset.source_page
-      }
-    ];
-  })
+  artManifest.assets
+    .filter((asset) => asset.status === "approved")
+    .flatMap((asset) => {
+      const filename = asset.local_path?.split("/").at(-1);
+      if (!filename || !asset.pixel_width || !asset.pixel_height) return [];
+      return [
+        [
+          asset.card_slug,
+          {
+            publicPath: `/card-art/${filename}`,
+            sourcePage: asset.source_page,
+            pixelWidth: asset.pixel_width,
+            pixelHeight: asset.pixel_height
+          }
+        ] as const
+      ];
+    })
 );
 
 export function getCatalogMetadata() {
   return {
     lastVerified: catalog.metadata.last_verified,
-    sourcePolicy: catalog.metadata.canonical_source_policy
+    sourcePolicy: catalog.metadata.canonical_source_policy,
+    annualFeeVerified: catalog.metadata.annual_fee_last_verified,
+    annualFeeSources: catalog.metadata.annual_fee_sources,
+    artLastResearched: artManifest.metadata.last_researched
   };
 }
 
@@ -33,6 +43,7 @@ export function getCatalogCards(): CatalogCard[] {
     name: card.name,
     slug: card.slug,
     applicationStatus: card.application_status,
+    annualFee: card.annual_fee,
     rewardCurrency: card.reward_currency,
     bestFor: card.best_for,
     rewardRules: card.reward_rules.map((rule) => ({

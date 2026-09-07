@@ -1,19 +1,26 @@
 import { describe, expect, it } from "vitest";
 import { getCatalogCards } from "./catalog";
 
-describe("card artwork publication gate", () => {
-  it("exposes only artwork that passed the resolution gate", () => {
-    const cards = getCatalogCards();
+describe("card artwork", () => {
+  const cards = getCatalogCards();
+
+  it("resolves a public path for every card with approved artwork", () => {
     const bySlug = new Map(cards.map((card) => [card.slug, card]));
 
     expect(bySlug.get("chase-sapphire-preferred")?.art?.publicPath).toBe(
-      "/card-art/chase-sapphire-preferred.png",
+      "/card-art/chase-sapphire-preferred.png"
     );
-    expect(bySlug.get("capital-one-venture-x")?.art?.publicPath).toBe(
-      "/card-art/capital-one-venture-x.png",
+    expect(bySlug.get("citi-custom-cash")?.art?.publicPath).toBe(
+      "/card-art/citi-custom-cash.webp"
     );
-    expect(bySlug.get("amex-gold")?.art).toBeUndefined();
-    expect(bySlug.get("capital-one-savor")?.art).toBeUndefined();
-    expect(bySlug.get("citi-double-cash")?.art).toBeUndefined();
+  });
+
+  it("carries source pixel dimensions so nothing renders upscaled", () => {
+    for (const card of cards) {
+      if (!card.art) continue;
+      expect(card.art.pixelWidth).toBeGreaterThan(0);
+      expect(card.art.pixelHeight).toBeGreaterThan(0);
+      expect(card.art.sourcePage).toMatch(/^https:\/\//);
+    }
   });
 });

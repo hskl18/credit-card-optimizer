@@ -1,6 +1,14 @@
 {
   "name": "credit-card-optimizer",
   "version": "0.1.0",
+  "description": "Which credit card to use for every purchase, in dollars.",
+  "keywords": [
+    "credit-cards",
+    "rewards",
+    "points",
+    "nextjs"
+  ],
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,10 +16,9 @@
     "start": "next start",
     "lint": "tsc --noEmit",
     "card-art:validate": "node scripts/validate-card-art.mjs",
-    "test": "npm run card-art:validate && vitest run"
+    "test": "pnpm run card-art:validate && vitest run"
   },
   "dependencies": {
-    "lucide-react": "^0.469.0",
     "next": "^16.2.9",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",

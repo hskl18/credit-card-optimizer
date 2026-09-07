@@ -1,29 +1,79 @@
 {
   "metadata": {
-    "last_researched": "2026-07-13",
-    "policy": "Use official issuer pages as the first source for card artwork. Downloaded files are prototype assets until reviewed for public redistribution.",
-    "minimum_publish_width": 600,
-    "maximum_rendered_width_css_px": 300,
+    "last_researched": "2026-09-04",
+    "policy": "Use unmodified artwork downloaded from official issuer pages. Every asset is a transparent cut-out rendered at a shared height, never above its source pixels.",
+    "maximum_rendered_width_css_px": 220,
+    "maximum_rendered_height_css_px": 176,
     "target_device_pixel_ratio": 2
   },
   "assets": [
     {
       "card_slug": "chase-sapphire-preferred",
-      "source_page": "https://www.chase.com/sapphire-cards/personal/preferred",
-      "image_url": "https://www.chase.com/content/dam/unified-assets/sapphire-cards/personal/preferred/aaa-bbb-ccc-assets/card_sapphirePref_VS.png",
+      "source_page": "https://media.chase.com/news/Meet-the-New-Chase-Sapphire-Preferred",
+      "image_url": "https://media.chase.com/content/dam/chase/media-center/header-chase-sapphire-preferred.png",
       "local_path": "assets/card-art/raw/chase-sapphire-preferred.png",
-      "pixel_width": 600,
-      "pixel_height": 400,
+      "pixel_width": 1200,
+      "pixel_height": 800,
       "status": "approved"
+    },
+    {
+      "card_slug": "chase-sapphire-reserve",
+      "source_page": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "image_url": "https://creditcards.chase.com/content/dam/jpmc-marketplace/card-art/sapphire_reserve_card_Halo.png",
+      "local_path": "assets/card-art/raw/chase-sapphire-reserve.png",
+      "pixel_width": 289,
+      "pixel_height": 181,
+      "status": "approved"
+    },
+    {
+      "card_slug": "chase-freedom-unlimited",
+      "source_page": "https://www.chase.com/personal/credit-cards/freedom/unlimited",
+      "image_url": "https://www.chase.com/content/dam/unified-assets/card-art/chase-freedom/freedom-unlimited/card_freedomUtld_V.png",
+      "local_path": "assets/card-art/raw/chase-freedom-unlimited.png",
+      "pixel_width": 1080,
+      "pixel_height": 720,
+      "status": "approved"
+    },
+    {
+      "card_slug": "chase-freedom-flex",
+      "source_page": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "image_url": "https://creditcards.chase.com/content/dam/jpmc-marketplace/card-art/freedom_flex_card_alt.png",
+      "status": "withheld_promotional_badge",
+      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
+    },
+    {
+      "card_slug": "prime-visa",
+      "source_page": "https://creditcards.chase.com/cash-back-credit-cards/amazon-prime-rewards",
+      "image_url": "https://creditcards.chase.com/content/dam/jpmc-marketplace/card-art/prime-visa.png",
+      "status": "withheld_promotional_badge",
+      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
     },
     {
       "card_slug": "amex-gold",
       "source_page": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
-      "image_url": "https://www.aexp-static.com/online/myca/shared/summary/cardasset/images/NUS000000174_480x304_STRAIGHT_96.png",
+      "image_url": "https://icm.aexp-static.com/acquisition/card-art/NUS000000174_480x304_straight_withname.png",
       "local_path": "assets/card-art/raw/amex-gold.png",
       "pixel_width": 480,
       "pixel_height": 304,
-      "status": "needs_higher_resolution"
+      "status": "approved"
+    },
+    {
+      "card_slug": "amex-platinum",
+      "source_page": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+      "image_url": "https://icm.aexp-static.com/acquisition/card-art/NUS000000237_480x304_straight_withname.png",
+      "local_path": "assets/card-art/raw/amex-platinum.png",
+      "pixel_width": 480,
+      "pixel_height": 304,
+      "status": "approved"
+    },
+    {
+      "card_slug": "amex-blue-cash-preferred",
+      "source_page": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+      "image_url": "https://icm.aexp-static.com/acquisition/card-art/NUS000000264_480x304_straight_withname.png",
+      "local_path": "assets/card-art/raw/amex-blue-cash-preferred.png",
+      "pixel_width": 480,
+      "pixel_height": 304,
+      "status": "approved"
     },
     {
       "card_slug": "capital-one-venture-x",
@@ -41,7 +91,16 @@
       "local_path": "assets/card-art/raw/capital-one-savor.png",
       "pixel_width": 450,
       "pixel_height": 282,
-      "status": "needs_higher_resolution"
+      "status": "approved"
+    },
+    {
+      "card_slug": "capital-one-quicksilver",
+      "source_page": "https://www.capitalone.com/credit-cards/quicksilver/",
+      "image_url": "https://ecm.capitalone.com/WCM/card/products/quicksilver_cardart.png",
+      "local_path": "assets/card-art/raw/capital-one-quicksilver.png",
+      "pixel_width": 300,
+      "pixel_height": 189,
+      "status": "approved"
     },
     {
       "card_slug": "citi-double-cash",
@@ -50,7 +109,138 @@
       "local_path": "assets/card-art/raw/citi-double-cash.webp",
       "pixel_width": 306,
       "pixel_height": 192,
-      "status": "needs_higher_resolution"
+      "status": "approved"
+    },
+    {
+      "card_slug": "citi-strata-premier",
+      "source_page": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "image_url": "https://aemapi.citi.com/content/dam/cfs/uspb/usmkt/cards/en/static/images/citi-strata-premier-credit-card/citi-strata-premier-credit-card_306x192.webp",
+      "local_path": "assets/card-art/raw/citi-strata-premier.webp",
+      "pixel_width": 324,
+      "pixel_height": 216,
+      "status": "approved"
+    },
+    {
+      "card_slug": "citi-custom-cash",
+      "source_page": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+      "image_url": "https://aemapi.citi.com/content/dam/cfs/uspb/usmkt/cards/en/static/images/citi-custom-cash-credit-card/citi-custom-cash-credit-card_306x192.webp",
+      "local_path": "assets/card-art/raw/citi-custom-cash.webp",
+      "pixel_width": 306,
+      "pixel_height": 192,
+      "status": "approved"
+    },
+    {
+      "card_slug": "boa-customized-cash-rewards",
+      "source_page": "https://www.bankofamerica.com/credit-cards/products/cash-back-credit-card/",
+      "image_url": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8ckn_cshsigcm_v_250x158.png",
+      "status": "withheld_promotional_badge",
+      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
+    },
+    {
+      "card_slug": "boa-unlimited-cash-rewards",
+      "source_page": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/",
+      "image_url": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8cty_cshsigcm_v_250x157.png",
+      "status": "withheld_promotional_badge",
+      "note": "The official download has an issuer promotional badge burned into the pixels, so it is not republished here."
+    },
+    {
+      "card_slug": "boa-premium-rewards",
+      "source_page": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/",
+      "image_url": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8CAL_prmsigcm_v_250_158.png",
+      "local_path": "assets/card-art/raw/boa-premium-rewards.png",
+      "pixel_width": 250,
+      "pixel_height": 158,
+      "status": "approved"
+    },
+    {
+      "card_slug": "boa-travel-rewards",
+      "source_page": "https://www.bankofamerica.com/credit-cards/products/travel-rewards-credit-card/",
+      "image_url": "https://www.bankofamerica.com/content/images/ContextualSiteGraphics/CreditCardArt/en_US/Approved_PCM/8blm_trvsigcm_v_250x158.png",
+      "local_path": "assets/card-art/raw/boa-travel-rewards.png",
+      "pixel_width": 250,
+      "pixel_height": 157,
+      "status": "approved"
+    },
+    {
+      "card_slug": "wells-fargo-active-cash",
+      "source_page": "https://creditcards.wellsfargo.com/",
+      "image_url": "https://creditcards.wellsfargo.com/W-Card-MarketPlace/v9-1-26/images/Products/ActiveCash/WF_ActiveCash_VS_Collateral_Front_RGB.png",
+      "local_path": "assets/card-art/raw/wells-fargo-active-cash.png",
+      "pixel_width": 427,
+      "pixel_height": 270,
+      "status": "approved"
+    },
+    {
+      "card_slug": "wells-fargo-autograph",
+      "source_page": "https://creditcards.wellsfargo.com/autograph-visa-credit-card/",
+      "image_url": "https://creditcards.wellsfargo.com/W-Card-MarketPlace/v9-1-26/images/Products/Autograph/Autograph-No-Fee-Card-RGB_d.png",
+      "local_path": "assets/card-art/raw/wells-fargo-autograph.png",
+      "pixel_width": 427,
+      "pixel_height": 269,
+      "status": "approved"
+    },
+    {
+      "card_slug": "wells-fargo-attune",
+      "source_page": "https://creditcards.wellsfargo.com/attune-cash-rewards-categories/",
+      "image_url": "https://creditcards.wellsfargo.com/W-Card-MarketPlace/v9-1-26/images/Products/AttuneBonus/attune_card_d.png",
+      "local_path": "assets/card-art/raw/wells-fargo-attune.png",
+      "pixel_width": 391,
+      "pixel_height": 247,
+      "status": "approved"
+    },
+    {
+      "card_slug": "us-bank-smartly",
+      "source_page": "https://www.usbank.com/credit-cards.html",
+      "image_url": "https://www.usbank.com/content/dam/usbank/en/images/illustrations/card-art/credit-cards/photo-bank-smartly-card-art.png",
+      "local_path": "assets/card-art/raw/us-bank-smartly.png",
+      "pixel_width": 310,
+      "pixel_height": 492,
+      "status": "approved"
+    },
+    {
+      "card_slug": "us-bank-cash-plus",
+      "source_page": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
+      "image_url": "https://www.usbank.com/content/dam/usbank/en/images/illustrations/card-art/credit-cards/photo-cash-plus-signature-lg.png",
+      "local_path": "assets/card-art/raw/us-bank-cash-plus.png",
+      "pixel_width": 200,
+      "pixel_height": 318,
+      "status": "approved"
+    },
+    {
+      "card_slug": "us-bank-altitude-go",
+      "source_page": "https://www.usbank.com/credit-cards.html",
+      "image_url": "https://www.usbank.com/content/dam/usbank/en/images/illustrations/card-art/credit-cards/altitude-go-visa-signature-credit-card.png",
+      "local_path": "assets/card-art/raw/us-bank-altitude-go.png",
+      "pixel_width": 639,
+      "pixel_height": 1015,
+      "status": "approved"
+    },
+    {
+      "card_slug": "discover-it-cash-back",
+      "source_page": "https://www.discover.com/credit-cards/cash-back/it-card/",
+      "image_url": "https://ecm.capitalone.com/WCM/dfs-card/products/cardart-cashit-with-shadow.png",
+      "local_path": "assets/card-art/raw/discover-it-cash-back.png",
+      "pixel_width": 620,
+      "pixel_height": 382,
+      "status": "approved"
+    },
+    {
+      "card_slug": "discover-it-miles",
+      "source_page": "https://www.discover.com/credit-cards/travel/",
+      "image_url": "https://ecm.capitalone.com/WCM/dfs-card/products/it-miles-card-header.png",
+      "local_path": "assets/card-art/raw/discover-it-miles.png",
+      "pixel_width": 568,
+      "pixel_height": 400,
+      "status": "approved"
+    },
+    {
+      "card_slug": "discover-it-chrome",
+      "source_page": "https://www.discover.com/credit-cards/cash-back/chrome/",
+      "image_url": "https://ecm.capitalone.com/WCM/dfs-card/products/cardart-cash-chrome-shadow.png",
+      "local_path": "assets/card-art/raw/discover-it-chrome.png",
+      "pixel_width": 620,
+      "pixel_height": 382,
+      "status": "approved"
     }
   ]
 }

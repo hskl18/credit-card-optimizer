@@ -1,5 +1,6 @@
-import { TakedownNotice } from "@/components/takedown-notice";
+import { BestBoard } from "@/components/best-board";
+import { getCatalogCards } from "@/lib/cards/catalog";
 
-export default function HomePage() {
-  return <TakedownNotice />;
+export default function BestPage() {
+  return <BestBoard cards={getCatalogCards()} />;
 }
