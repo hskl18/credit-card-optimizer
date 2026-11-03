@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type React from "react";
 import { TabBar } from "@/components/tab-bar";
 import { getCatalogMetadata } from "@/lib/cards/catalog";
@@ -62,6 +63,7 @@ export default function RootLayout({
           </footer>
           <TabBar />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
