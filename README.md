@@ -8,6 +8,10 @@ This converts every rate into one number — dollars back per $100 spent — so 
 Everything runs in the browser.
 There is no account, no bank linking, and no card numbers; your wallet lives in `localStorage` and never leaves the device.
 
+<img src="docs/media/best-by-category.png" width="420" alt="The home screen, listing the best card for each spending category with dollars back per $100: Dining $4, Groceries $6, Amazon $5, Travel $10, Gas $3, EV charging $3, Transit $3.">
+
+*The home screen from a local production build, 2026-11-08.*
+
 ## Screens
 
 - `/` — the best card for each of 13 spending categories, restricted to rates you get automatically.
@@ -23,7 +27,7 @@ pnpm install
 pnpm dev
 ```
 
-`pnpm lint` type-checks, `pnpm test` validates the data files and runs the unit tests, and `pnpm build` produces the static export.
+`pnpm lint` type-checks, `pnpm test` validates the data files and runs the unit tests, and `pnpm build` produces the production build, with every page prerendered.
 
 ## How a number is built
 
